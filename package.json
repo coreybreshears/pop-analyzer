@@ -1,12 +1,14 @@
 {
-  "name": "server",
-  "version": "0.0.0",
-  "private": true,
+  "name": "population-analyzer",
+  "version": "1.0.0",
+  "description": "population analyzer",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./bin/www",
-    "debug": "nodemon  --inspect ./bin/www",
-    "test": "NODE_ENV=test ./node_modules/.bin/mocha --exit --timeout 30000",
-    "seed": "node db/seed.js"
+    "client": "cd client && npm start",
+    "server": "cd server && npm start",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "axios": "^0.27.2",
@@ -30,5 +32,10 @@
   },
   "engines": {
     "node": "16.x"
-  }
+  },
+  "keywords": [
+    "analyzer"
+  ],
+  "author": "corey",
+  "license": "ISC"
 }
