@@ -60,8 +60,10 @@ const Home = ({ user, logout }) => {
     const fetchPastRequests = async () => {
       try {
         const { data } = await axios.get("/api/requests");
-        setCurrentRequestId(data[0].id);
-        setRequests(data);
+        if (data.length) {
+          setCurrentRequestId(data[0].id);
+          setRequests(data);
+        }
       } catch (error) {
         console.error(error);
       }
