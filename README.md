@@ -31,7 +31,7 @@ Create the PostgreSQL database (these instructions may need to be adapted for yo
 
 ```
 psql
-CREATE DATABASE statistic;
+CREATE DATABASE population;
 \q
 ```
 
@@ -77,11 +77,11 @@ In a separate terminal, start the back end:
 
 ```
 cd server
-npm run dev
+npm start
 ```
 
 ## How to Run E2E Tests
 
 1. Seed the database with `npm run seed` in `server` directory.
-1. Start the backend server with `npm run dev` in `server` directory.
+1. Start the backend server with `npm start` in `server` directory.
 1. Start the frontend server with `npm start` in `client` directory.

@@ -5,6 +5,11 @@ const db = new Sequelize(
     "postgres://corey:password@localhost:5432/population",
   {
     logging: false,
+    dialectOptions: {
+      ssl: {
+        rejectUnauthorized: false,
+      },
+    },
   }
 );
 
